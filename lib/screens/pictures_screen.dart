@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class PicturesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    PicturesRepository().getSearchResult();
 
     return Scaffold(
       appBar: AppBar(

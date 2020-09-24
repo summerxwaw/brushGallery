@@ -19,16 +19,16 @@ class Pictures {
   });
 
   factory Pictures.fromJson(Map<String, dynamic> jsonData) => Pictures(
-    id: jsonData['products']['id'],
-    stock: jsonData['products']['stock'],
-    image: jsonData['products']['image'],
-    article: jsonData['products']['article'],
-    name: jsonData['products']['name'],
-    price: jsonData['products']['price'],
-    type: jsonData['products']['ptype'],
-    parent: jsonData['products']['parent'],
-    link: jsonData['products']['link'],
-    complexity: jsonData['products']['complexity'],
-    category: jsonData['products']['category'],
+    id: jsonData['id'],
+    stock: jsonData['stock'],
+    image: jsonData['image'],
+    article: jsonData['article'],
+    name: jsonData['name'],
+    price: jsonData['price'].toString(),
+    type: jsonData['ptype'],
+    parent: jsonData['parent'],
+    link: jsonData['link'],
+    complexity: jsonData['complexity'],
+    category: jsonData['category'],
     );
 }
