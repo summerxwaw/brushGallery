@@ -1,21 +1,19 @@
+import 'dart:ui';
+
+import 'package:drop/models/picture.dart';
 import 'package:flutter/material.dart';
 
-import '../models/pictures.dart';
 
 class GalleryProvider extends ChangeNotifier {
-  List<Pictures> _pictureContent = new List<Pictures>();
+  List<PictureItems> _pictureContent = new List<PictureItems>();
 
-  List<Pictures> get pictureContent {
+  List<PictureItems> get pictureContent {
     return [..._pictureContent];
   }
 
-  void addPicture (var jsonData) {
-    for (var i = 0; i < jsonData['products'].length; i++) {
-      pictureContent.add(
-        Pictures.fromJson(
-          jsonData['products'][i],
-        ),
-      );
-    }
+  void addPicture (List<PictureItems> items) {
+   _pictureContent = items;
+   print(_pictureContent);
+    notifyListeners();
   }
 }

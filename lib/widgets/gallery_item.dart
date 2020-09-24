@@ -1,3 +1,4 @@
+import 'package:drop/models/picture.dart';
 import 'package:drop/providers/gallery_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,14 +7,14 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<GalleryProvider>(context, listen: false);
+    final product = Provider.of<PictureItems>(context, listen: false);
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GridTile(
         child: GestureDetector(
           child: Image.network(
-            product.,
+            product.image,
             fit: BoxFit.cover,
           ),
         ),
@@ -30,7 +31,7 @@ class ProductItem extends StatelessWidget {
             ),
           ),
           title: Text(
-            product.title,
+            product.name,
             textAlign: TextAlign.center,
           ),
         ),

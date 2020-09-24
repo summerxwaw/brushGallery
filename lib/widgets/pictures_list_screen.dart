@@ -4,6 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:drop/repository/pictures_repository.dart';
 
 import '../repository/pictures_repository.dart';
+import 'gallery_grids.dart';
 
 class PicturesListScreen extends StatefulWidget {
   @override
@@ -16,15 +17,13 @@ class _PicturesListScreenState extends State<PicturesListScreen> {
   @override
   Widget build(BuildContext context) {
     PicturesRepository().getSearchResult(context);
+
     return Scaffold(
-        appBar: AppBar(
-          title: Text('My shop'),
-        ),
-        body: _isLoading
-            ? Center(
-          child: CircularProgressIndicator(),
-        )
-            : ProductsGrid(_showOnlyFavorites));
+      body: _isLoading
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : ProductsGrid(),
+    );
   }
 }
-
