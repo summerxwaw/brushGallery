@@ -13,7 +13,7 @@ class GalleryProvider extends ChangeNotifier {
 
   void addPicture (List<PictureItems> items) {
    _pictureContent = items;
-   print(_pictureContent);
+//   print(_pictureContent);
     notifyListeners();
   }
 }
