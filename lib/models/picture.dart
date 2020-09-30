@@ -5,7 +5,16 @@ import 'package:http/http.dart' as http;
 
 class PictureItems with ChangeNotifier {
   int id, stock;
-  String image, article, name, price, type, parent, link, complexity, category;
+  String image;
+  String article;
+  String name;
+  String price;
+  String type;
+  String parent;
+  String link;
+  String complexity;
+  String category;
+  String size;
 
   PictureItems(
       {@required this.id,
@@ -18,7 +27,9 @@ class PictureItems with ChangeNotifier {
       @required this.parent,
       @required this.link,
       @required this.complexity,
-      @required this.category});
+      @required this.category,
+      @required this.size
+      });
 
   factory PictureItems.fromJson(Map<String, dynamic> jsonData) => PictureItems(
         id: jsonData['id'],
@@ -32,5 +43,6 @@ class PictureItems with ChangeNotifier {
         link: jsonData['link'],
         complexity: jsonData['complexity'],
         category: jsonData['category'],
+        size: jsonData['size'],
       );
 }

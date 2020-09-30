@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProductItem extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<PictureItems>(context, listen: false);
@@ -17,13 +16,26 @@ class ProductItem extends StatelessWidget {
         child: GestureDetector(
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) {
-              return DetailScreen(product.image);
+              return DetailScreen(
+                product.image,
+                product.name,
+                product.type,
+                product.link,
+                product.complexity,
+                product.category,
+                product.size,
+                product.stock,
+                product.price,
+              );
             }));
           },
           child: CachedNetworkImage(
             imageUrl: product.image,
             progressIndicatorBuilder: (context, url, downloadProgress) =>
-                CircularProgressIndicator(value: downloadProgress.progress),
+                SizedBox(
+                    width: 50,
+                    child: CircularProgressIndicator(
+                        value: downloadProgress.progress)),
             errorWidget: (context, url, error) => Icon(Icons.error),
           ),
         ),
@@ -35,8 +47,7 @@ class ProductItem extends StatelessWidget {
                 Icons.favorite,
               ),
               color: Theme.of(context).accentColor,
-              onPressed: () {
-              },
+              onPressed: () {},
             ),
           ),
           title: Text(

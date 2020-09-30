@@ -1,3 +1,4 @@
+import 'package:drop/widgets/pictures_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,13 +15,14 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (ctx) => GalleryProvider(),
       child: MaterialApp(
-        title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: PicturesScreen(),
+        debugShowCheckedModeBanner: false,
+        home: PicturesListScreen(),
       ),
     );
   }
 }
+
